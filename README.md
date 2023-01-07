@@ -38,7 +38,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor Solution]([https://github.com/dwz-wong/interactive-rating-component](https://www.frontendmentor.io/solutions/interactive-rating-component-aCv_1IILox)
+- Solution URL: [Frontend Mentor Solution]([https://github.com/dwz-wong/interactive-rating-component](https://www.frontendmentor.io/solutions/interactive-rating-component-aCv_1IILox))
 - Live Site URL: [Live Site](https://dwz-wong.github.io/interactive-rating-component/)
 
 ## My process
