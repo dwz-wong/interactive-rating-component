@@ -52,8 +52,6 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
 During this challenge, I learned to make the website responsive using the media query, even though I wondered if I was doing it correctly.
 
 The media query I have added in the css file below:
