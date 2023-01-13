@@ -160,7 +160,8 @@ body {
 
 @media screen and (max-width: 480px) {
     .rating__container {
-        max-width: 380px;
+        width: 90%;
+        margin: 0 auto;
     }
 }
 
