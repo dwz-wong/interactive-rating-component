@@ -1,39 +1,45 @@
-let arr = []
+const rating__form = document.getElementById("rating__form")
+const rating_container = document.getElementById("rating__container")
+const rating__item = document.querySelectorAll('.rating__item')
+const rating__btn = document.getElementById("rating__btn")
+const rbs = document.querySelectorAll('input[type="radio"]')
+const thankyou__container = document.getElementById("thankyou__container")
+const rating__result = document.getElementById("rating__result")
 
-function ratingChecked(getBtnID) {
-    if (arr.length === 1) {
+const ri_selected = document.getElementsByClassName("rating__item selected")
 
-        if (getBtnID !== arr[0]) {
-            document.getElementById(arr[0]).style.color = "hsl(216, 12%, 54%)"
-            document.getElementById(arr[0]).style.background = "hsl(213, 15%, 21%)"
-            arr.pop()
+rating__btn.addEventListener('click', function(){
+    console.log(rating__form.rating.value)
+    
+    rating__container.style.display = "none"
+    thankyou__container.style.display = "block"
 
-            document.getElementById(getBtnID).style.color = "hsl(0, 0%, 100%)"
-            document.getElementById(getBtnID).style.background = "hsl(216, 12%, 54%)"
-            arr.push(getBtnID)
+    rating__result.textContent = `You selected ${rating__form.rating.value} out of 5`
+})
+
+/* Give each and every 'rating__item' function to click */
+for (let i = 0; i < rating__item.length; i++) {
+    rating__item[i].addEventListener('click', function(){
+        /* If the 'rating__item selected' class name more than 0 */
+        if (ri_selected.length > 0) {
+            /* Remove the 'selected' class from the previous 'rating__item' that has been selected */
+            ri_selected[0].style.color = "hsl(217, 12%, 63%)"
+            ri_selected[0].style.background = "hsl(213, 15%, 25%)"
+            ri_selected[0].classList.remove("selected")
+
+            /* Add 'selected' class to the current 'rating__item' */
+            rating__item[i].classList.add("selected")
+            rating__item[i].style.color = "hsl(0, 0%, 100%)"
+            rating__item[i].style.background = "hsl(217, 12%, 63%)"
+            rbs[i].checked = true;
+
+        /* Else add 'selected' class to the 'rating__item' */
+        } else {
+            rating__item[i].classList.add("selected")
+            rating__item[i].style.color = "hsl(0, 0%, 100%)"
+            rating__item[i].style.background = "hsl(217, 12%, 63%)"
+            rbs[i].checked = true;
         }
-        else if (getBtnID === arr[0]) {
-            document.getElementById(getBtnID).style.color = "hsl(216, 12%, 54%)"
-            document.getElementById(getBtnID).style.background = "hsl(213, 15%, 21%)"
-            arr.pop()
-        }
-
-    } else {
-        arr.push(getBtnID)
-        document.getElementById(getBtnID).style.color = "hsl(0, 0%, 100%)"
-        document.getElementById(getBtnID).style.background = "hsl(216, 12%, 54%)"
-    }
+    })
 }
 
-function submitRating() {
-    if (arr.length === 1) {
-        let value = document.getElementById(arr[0]).textContent
-
-        document.getElementById("rating__container").style.display = "none"
-
-        document.getElementById("thankyou__rating-selected").textContent = 
-        `You selected ${value} out of 5`
-
-        document.getElementById("thankyou__container").style.display = "block"
-    }
-}
