@@ -20,7 +20,8 @@
         Please let us know how we did with your support request.
         All feedback is appreciated to help us improve our offering!
       </p>
-      <form id="rating__form" class="rating__form">
+      <!-- a form with method get -->
+      <form method="get" id="rating__form" class="rating__form">
         <ul class="rating__list">
           <li class="rating__item">
             <input type="radio" id="rating__1" name="rating" value="1">
@@ -47,14 +48,14 @@
             <label for="rating__5">5</label>
           </li>
         </ul>
-        <input id="rating__btn" type="button" value="Submit">
+        <input id="rating__btn" type="submit" value="Submit">
       </form>
     </div>
 
     <div id="thankyou__container" class="thankyou__container">
       <img src="images/illustration-thank-you.svg" alt="" aria-hidden="true" class="thankyou__img">
       <p id="rating__result" class="rating__result">You selected 4 out of 5</p>
-      <h1 class="thankyou__title">Thank you!</h1>
+      <h2 class="thankyou__title">Thank you!</h2>
       <p class="thankyou__description">
         We appreciate you taking the time to give a rating.
         If you every need more support, don't hesitate to get in touch!
