@@ -91,10 +91,14 @@ body {
     padding: .9rem 1.3rem;
 }
 
-.rating__item:hover,
-.rating__item:active {
+.rating__item:hover {
     color: var(--white-clr);
     background-color: var(--orange-clr);
+}
+
+.rating__item:active {
+    color: var(--white-clr);
+    background-color: var(--light-grey-clr);
 }
 
 .rating__item input {
