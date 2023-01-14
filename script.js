@@ -9,12 +9,11 @@ const rating__result = document.getElementById("rating__result")
 const ri_selected = document.getElementsByClassName("rating__item selected")
 
 rating__btn.addEventListener('click', function(){
-    console.log(rating__form.rating.value)
-    
-    rating__container.style.display = "none"
-    thankyou__container.style.display = "block"
-
-    rating__result.textContent = `You selected ${rating__form.rating.value} out of 5`
+    if (ri_selected.length > 0) {
+        rating__container.style.display = "none"
+        thankyou__container.style.display = "block"
+        rating__result.textContent = `You selected ${rating__form.rating.value} out of 5`
+    }
 })
 
 /* Give each and every 'rating__item' function to click */
@@ -42,4 +41,3 @@ for (let i = 0; i < rating__item.length; i++) {
         }
     })
 }
-
